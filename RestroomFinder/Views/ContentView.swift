@@ -26,6 +26,7 @@ struct ContentView: View {
         guard let region = locationManager.region else { return }
         let coordinate = region.center
         do {
+            // retrieve from Constants file in Utilities group
             restrooms = try await restroomClient.fetchRestrooms(url: Constants.Urls.restroomsByLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
         } catch {
             print(error.localizedDescription)
