@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct RestroomClient {
+// make it conform to HTTPClient so we can get restrooms from a local JSON file during dev
+struct RestroomClient: HTTPClient {
     
     // API responses can of course throw errors, so implement that first
     private enum RestroomClientError: Error {

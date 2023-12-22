@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-struct Restroom: Decodable, Identifiable {
+struct Restroom: Decodable, Identifiable, Equatable {
     
     let id: Int
     let name: String
