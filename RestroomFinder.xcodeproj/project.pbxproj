@@ -22,6 +22,8 @@
 		F1CFEC102B32B625007A70F5 /* MockRestroomClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CFEC0F2B32B625007A70F5 /* MockRestroomClient.swift */; };
 		F1CFEC122B32B6C1007A70F5 /* restrooms.json in Resources */ = {isa = PBXBuildFile; fileRef = F1CFEC112B32B6C1007A70F5 /* restrooms.json */; };
 		F1CFEC142B32B828007A70F5 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CFEC132B32B828007A70F5 /* PreviewData.swift */; };
+		F1CFEC162B35365F007A70F5 /* MapCameraPosition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CFEC152B35365F007A70F5 /* MapCameraPosition+Extension.swift */; };
+		F1CFEC182B353ADD007A70F5 /* RestroomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CFEC172B353ADD007A70F5 /* RestroomDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		F1CFEC0F2B32B625007A70F5 /* MockRestroomClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRestroomClient.swift; sourceTree = "<group>"; };
 		F1CFEC112B32B6C1007A70F5 /* restrooms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restrooms.json; sourceTree = "<group>"; };
 		F1CFEC132B32B828007A70F5 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		F1CFEC152B35365F007A70F5 /* MapCameraPosition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapCameraPosition+Extension.swift"; sourceTree = "<group>"; };
+		F1CFEC172B353ADD007A70F5 /* RestroomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC97A052A98DCF100E08C44 /* MKCoordinateRegion+Extensions.swift */,
+				F1CFEC152B35365F007A70F5 /* MapCameraPosition+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			children = (
 				8DC979F72A98DCA500E08C44 /* ContentView.swift */,
 				8DC97A102A98DD6700E08C44 /* ActionButtons.swift */,
+				F1CFEC172B353ADD007A70F5 /* RestroomDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 				8DC97A112A98DD6700E08C44 /* ActionButtons.swift in Sources */,
 				8DC979F82A98DCA500E08C44 /* ContentView.swift in Sources */,
 				F1CFEC032B2C1823007A70F5 /* Restroom.swift in Sources */,
+				F1CFEC162B35365F007A70F5 /* MapCameraPosition+Extension.swift in Sources */,
 				8DC97A0B2A98DD2400E08C44 /* LocationManager.swift in Sources */,
 				8DC97A062A98DCF100E08C44 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				8DC979F62A98DCA500E08C44 /* RestroomFinderApp.swift in Sources */,
@@ -238,6 +245,7 @@
 				F1CFEC142B32B828007A70F5 /* PreviewData.swift in Sources */,
 				F1CFEC102B32B625007A70F5 /* MockRestroomClient.swift in Sources */,
 				F1CFEC062B2EC196007A70F5 /* RestroomClient.swift in Sources */,
+				F1CFEC182B353ADD007A70F5 /* RestroomDetailView.swift in Sources */,
 				F1CFEC0C2B30127B007A70F5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

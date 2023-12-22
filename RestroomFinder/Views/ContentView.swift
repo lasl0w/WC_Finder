@@ -20,12 +20,17 @@ struct ContentView: View {
     @State private var restrooms: [Restroom] = []
     // optional b/c it starts unselected, until the user selects one
     @State private var selectedRestroom: Restroom?
-    
+    @State private var visibleRegion: MKCoordinateRegion?
+    @State private var position: MapCameraPosition = .userLocation(fallback: .apple)
     
     // TODO: why async?
     private func loadRestrooms() async {
         // 1) get the region so we can ascertain the lat/long
-        guard let region = locationManager.region else { return }
+        //guard let region = locationManager.region else { return }
+        // switch from user's region to visibleRegion so we can load restrooms based on map movement
+        guard let region = visibleRegion else { return }
+        // TODO: if visibleRegion doesn't exist yet, what happens, then should we fall back to locationManager.region
+        /// NO, well sort of, better approach is to set the visibleRegion to the user's region in the initial map load.  Done!
         let coordinate = region.center
         do {
             // retrieve from Constants file in Utilities group
@@ -38,7 +43,8 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Map {
+            // add $position binding so it keeps the map centered on our position.  position awareness
+            Map(position: $position) {
                 ForEach(restrooms) { restroom in
                     //Marker(restroom.name, coordinate: restroom.coordinate)
                     Annotation(restroom.name, coordinate: restroom.coordinate) {
@@ -58,10 +64,35 @@ struct ContentView: View {
                 UserAnnotation()
             }
         }.task(id: locationManager.region) {
-            // use the task modifier to load restrooms on
-            // it takes time to get the user region, make it dependent on user region update
-            await loadRestrooms()
-            // restrooms is now populated
+            if let region = locationManager.region {
+                visibleRegion = region
+                // use the task modifier to load restrooms on
+                // it takes time to get the user region, make it dependent on user region update
+                await loadRestrooms()
+                // restrooms is now populated
+            }
+
+        }
+        .onMapCameraChange { context in
+            visibleRegion = context.region
+        }
+        // when the selectedRestroom changes, show the sheet and these properties
+        .sheet(item: $selectedRestroom, content: { restroom in
+            RestroomDetailView(restroom: restroom)
+                .presentationDetents([.fraction(0.25)])
+        })
+        .overlay(alignment: .topLeading) {
+            Button {
+                Task {
+                    // TODO: side effect is that Task might continue on after you leave this view.  any better options? Task tut.
+                    await loadRestrooms()
+                }
+            } label: {
+                Image(systemName: "arrow.clockwise.circle.fill")
+                    .font(.largeTitle)
+                //use foregroundStyle primary & secondary so it's not semi-transparent.  primary = shapeStyle, secondary = background shapeStyle
+                    .foregroundStyle(.white, .blue )
+            }
         }
     }
 }
