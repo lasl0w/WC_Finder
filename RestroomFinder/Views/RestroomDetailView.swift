@@ -7,6 +7,35 @@
 
 import SwiftUI
 
+// TODO: how does a preview work when you have multiple structs?
+struct AmenitiesView: View {
+    
+    let restroom: Restroom
+    
+    var body: some View {
+        // space 12 between each amenity icon
+        HStack(spacing: 12) {
+            AmenityView(symbol: "♿", isEnabled: restroom.accessible)
+            AmenityView(symbol: "🚻", isEnabled: restroom.unisex)
+            AmenityView(symbol: "🚼", isEnabled: restroom.changingTable)
+        }
+    }
+}
+
+struct AmenityView: View {
+    
+    let symbol: String
+    let isEnabled: Bool
+    
+    var body: some View {
+        if isEnabled {
+            Text(symbol)
+        }
+    }
+}
+
+
+
 struct RestroomDetailView: View {
     
     // must pass in the restroom in order to show the detail
@@ -21,7 +50,10 @@ struct RestroomDetailView: View {
                 Text(comment)
                     .font(.caption)
             }
-        }
+            AmenitiesView(restroom: restroom)
+            ActionButtons(mapItem: restroom.mapItem)
+        }.frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
     }
 }
 

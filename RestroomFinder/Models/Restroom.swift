@@ -7,6 +7,8 @@
 
 import Foundation
 import CoreLocation
+import MapKit
+import Contacts
 
 struct Restroom: Decodable, Identifiable, Equatable {
     
@@ -44,5 +46,26 @@ struct Restroom: Decodable, Identifiable, Equatable {
         case changingTable = "changing_table"
         case latitude
         case longitude
+    }
+    
+
+
+}
+// TODO: why does it need to be an extension vs just another computed property iin the struct?
+// extend so it works with our ActionButtons (which need an MKMapItem).  import mapkit too.
+extension Restroom {
+    var mapItem: MKMapItem {
+        
+        var addressDictionary: [String: Any] = [
+            CNPostalAddressStreetKey: self.street,
+            CNPostalAddressCityKey: self.city,
+            CNPostalAddressStateKey: self.state
+        ]
+        
+        // create a computed property.  make an address, make a placemark, make a mapItem
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDictionary)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = name
+        return mapItem
     }
 }
