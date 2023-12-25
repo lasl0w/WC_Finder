@@ -14,6 +14,7 @@
 		8DC97A062A98DCF100E08C44 /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC97A052A98DCF100E08C44 /* MKCoordinateRegion+Extensions.swift */; };
 		8DC97A0B2A98DD2400E08C44 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC97A0A2A98DD2400E08C44 /* LocationManager.swift */; };
 		8DC97A112A98DD6700E08C44 /* ActionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC97A102A98DD6700E08C44 /* ActionButtons.swift */; };
+		F1AA3BB22B37B56200A01BBD /* CLLocationCoordinate2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA3BB12B37B56200A01BBD /* CLLocationCoordinate2D+Extensions.swift */; };
 		F1CFEC032B2C1823007A70F5 /* Restroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CFEC022B2C1823007A70F5 /* Restroom.swift */; };
 		F1CFEC062B2EC196007A70F5 /* RestroomClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CFEC052B2EC196007A70F5 /* RestroomClient.swift */; };
 		F1CFEC092B2F8861007A70F5 /* HTTPClientKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CFEC082B2F8861007A70F5 /* HTTPClientKey.swift */; };
@@ -35,6 +36,7 @@
 		8DC97A052A98DCF100E08C44 /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
 		8DC97A0A2A98DD2400E08C44 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		8DC97A102A98DD6700E08C44 /* ActionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtons.swift; sourceTree = "<group>"; };
+		F1AA3BB12B37B56200A01BBD /* CLLocationCoordinate2D+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extensions.swift"; sourceTree = "<group>"; };
 		F1CFEC022B2C1823007A70F5 /* Restroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restroom.swift; sourceTree = "<group>"; };
 		F1CFEC052B2EC196007A70F5 /* RestroomClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomClient.swift; sourceTree = "<group>"; };
 		F1CFEC082B2F8861007A70F5 /* HTTPClientKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientKey.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				8DC97A052A98DCF100E08C44 /* MKCoordinateRegion+Extensions.swift */,
 				F1CFEC152B35365F007A70F5 /* MapCameraPosition+Extension.swift */,
+				F1AA3BB12B37B56200A01BBD /* CLLocationCoordinate2D+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				8DC97A0B2A98DD2400E08C44 /* LocationManager.swift in Sources */,
 				8DC97A062A98DCF100E08C44 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				8DC979F62A98DCA500E08C44 /* RestroomFinderApp.swift in Sources */,
+				F1AA3BB22B37B56200A01BBD /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				F1CFEC0E2B32B482007A70F5 /* HTTPClient.swift in Sources */,
 				F1CFEC092B2F8861007A70F5 /* HTTPClientKey.swift in Sources */,
 				F1CFEC142B32B828007A70F5 /* PreviewData.swift in Sources */,
